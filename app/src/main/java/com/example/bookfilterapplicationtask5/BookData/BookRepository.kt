@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 class BookRepository(private val bookDao: BookDao) {
 
     val readAllBooks:LiveData<List<Book>> = bookDao.getBooks()
-    fun getBooksByauthor(author:String):LiveData<List<Book>>
+    fun getBooksByAuthor(author:String):LiveData<List<Book>>
     {
        return bookDao.getAllBooks(author)
     }

@@ -18,9 +18,9 @@ class BooksAdapter: RecyclerView.Adapter<BooksAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem=bookList[position]
-        holder.itemView.findViewById<TextView>(R.id.id_txt).text=currentItem.book_id.toString()
-        holder.itemView.findViewById<TextView>(R.id.book_txt).text=currentItem.title
-        holder.itemView.findViewById<TextView>(R.id.year_txt).text=currentItem.year.toString()
+        holder.itemView.findViewById<TextView>(R.id.id).text=currentItem.book_id.toString()
+        holder.itemView.findViewById<TextView>(R.id.bookTitle).text=currentItem.title
+        holder.itemView.findViewById<TextView>(R.id.pages).text=currentItem.pages.toString()
     }
 
     override fun getItemCount(): Int {

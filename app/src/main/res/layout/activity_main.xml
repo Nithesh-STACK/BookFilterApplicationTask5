@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/filterAuthor" />
 
     <TextView
-        android:id="@+id/id_title"
+        android:id="@+id/id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -63,20 +63,20 @@
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <TextView
-        android:id="@+id/title_title"
+        android:id="@+id/bookTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintStart_toEndOf="@+id/id_title"
+        app:layout_constraintStart_toEndOf="@+id/id"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <TextView
-        android:id="@+id/year_title"
+        android:id="@+id/pages_books"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="12dp"
-        app:layout_constraintStart_toEndOf="@+id/title_title"
+        app:layout_constraintStart_toEndOf="@+id/bookTitle"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

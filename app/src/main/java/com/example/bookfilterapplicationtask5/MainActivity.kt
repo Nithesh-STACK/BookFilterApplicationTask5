@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.button).setOnClickListener()
         {
-            findViewById<TextView>(R.id.id_title).text="Id"
-            findViewById<TextView>(R.id.title_title).text="Book Title"
-            findViewById<TextView>(R.id.year_title).text="Year"
+            findViewById<TextView>(R.id.id).text="Id"
+            findViewById<TextView>(R.id.bookTitle).text="Book Title"
+            findViewById<TextView>(R.id.pages_books).text="Pages"
             bookViewModelData.getBooksByAuthor(author.toString()).observe(this,{ book->
                 adapter.setData(book)
             })

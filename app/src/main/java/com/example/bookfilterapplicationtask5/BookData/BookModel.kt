@@ -18,7 +18,7 @@ class BookModel(application: Application): AndroidViewModel(application) {
     }
     fun getBooksByAuthor(author:String):LiveData<List<Book>>
     {
-        return repository.getBooksByauthor(author)
+        return repository.getBooksByAuthor(author)
     }
 
     fun addBook(book: Book)
