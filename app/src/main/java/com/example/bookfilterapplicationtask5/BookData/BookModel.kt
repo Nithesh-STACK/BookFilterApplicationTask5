@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class BookViewModel(application: Application): AndroidViewModel(application) {
+class BookModel(application: Application): AndroidViewModel(application) {
 
     private val repository:BookRepository
     val readAllBooks:LiveData<List<Book>>

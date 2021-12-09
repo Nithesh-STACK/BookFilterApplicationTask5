@@ -15,14 +15,14 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var BookViewModelData:BookViewModel
+    private lateinit var bookViewModelData:BookModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        BookViewModelData = ViewModelProvider(this).get(BookViewModel::class.java)
+        bookViewModelData = ViewModelProvider(this).get(BookModel::class.java)
         findViewById<TextView>(R.id.insert).setOnClickListener()
         {
             insertDataToDatabase()
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.id_title).text="Id"
             findViewById<TextView>(R.id.title_title).text="Book Title"
             findViewById<TextView>(R.id.year_title).text="Year"
-            BookViewModelData.getBooksByAuthor(author.toString()).observe(this,{ book->
+            bookViewModelData.getBooksByAuthor(author.toString()).observe(this,{ book->
                 adapter.setData(book)
             })
         }
@@ -50,15 +50,15 @@ class MainActivity : AppCompatActivity() {
         val bookService=bookApplication.books
 
         CoroutineScope(Dispatchers.IO).launch {
-            val decodedBook = bookService.getAllbooks()
+            val decodedBook = bookService.getAllBooks()
             withContext(Dispatchers.Main)
             {
                 for(myData in decodedBook) {
                     val book =
                         Book(0,myData.title,myData.author,myData.language,myData.year.toInt(),myData.pages.toInt())
                     val author= Author(0,myData.author,myData.country)
-                    BookViewModelData.addAuthor(author)
-                    BookViewModelData.addBook(book)
+                    bookViewModelData.addAuthor(author)
+                    bookViewModelData.addBook(book)
                 }
             }
         }
